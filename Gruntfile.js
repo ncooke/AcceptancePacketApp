@@ -51,6 +51,13 @@ module.exports = function(grunt) {
         dest: '<%= settings.baseDestination %>', 
         filter: 'isFile'
       },
+      Roommate:{ //Every folder
+        expand: true, 
+        flatten: true, 
+        src: ['sources/housing/Housing Agreement and Roommate Questionnaire.pdf'], 
+        dest: '<%= settings.baseDestination %>', 
+        filter: 'isFile'
+      },
       I20:{ //Citizenship: INT only
         expand: true, 
         cwd: 'sources/I-20/',
@@ -133,7 +140,8 @@ module.exports = function(grunt) {
   grunt.registerTask('SUMMER', ['copy:EnrollmentAgreement_SUMMER']);
   //Global: for every folder
   grunt.registerTask('global', ['copy:letter',
-                                'copy:Calendar', 
+                                'copy:Calendar',
+                                'copy:Roommate', 
                                 'copy:Consent']);
 
 
